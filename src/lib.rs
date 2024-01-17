@@ -30,8 +30,8 @@ pub struct Timeline {
 }
 
 pub fn parse_srt_from_str(input: &str) -> IResult<&str, Vec<Subtitle>> {
-    let (input, blocks) = many0(parse_block)(input)?;
-    Ok((input, blocks))
+    let (input, subs) = many0(parse_block)(input)?;
+    Ok((input, subs))
 }
 
 fn parse_block(input: &str) -> IResult<&str, Subtitle> {
